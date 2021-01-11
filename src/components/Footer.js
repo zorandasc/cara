@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Seo = () => {
+const Footer = () => {
     return (
         <div>
-            SEO
+            Footer
         </div>
     );
 };
 
-export default Seo;
+export default Footer;

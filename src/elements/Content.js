@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Seo = () => {
+const Content = () => {
     return (
         <div>
-            SEO
+            content
         </div>
     );
 };
 
-export default Seo;
+export default Content;

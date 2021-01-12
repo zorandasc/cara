@@ -2,6 +2,7 @@
 import React from "react"
 import { jsx } from "theme-ui"
 
+//objekat koji sadrzi oblike
 const icons = {
   triangle: {
     shape: (

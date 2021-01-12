@@ -11,12 +11,11 @@ import Contact from "../components/contact"
 
 const IndexPage = () => (
   <Layout>
-    <Parallax>
-      <h1>INDEX PAGE</h1>
-      <Hero></Hero>
-      <Projects></Projects>
-      <About></About>
-      <Contact></Contact>
+    <Parallax pages={5}>
+      <Hero offset={0} factor={1}></Hero>
+      <Projects offset={1} factor={2}></Projects>
+      <About offset={3} factor={1}></About>
+      <Contact offset={4} factor={1}></Contact>
     </Parallax>
   </Layout>
 )

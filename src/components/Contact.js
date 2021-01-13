@@ -7,6 +7,9 @@ import Footer from "./footer"
 import Divider from "../elements/divider"
 import SVG from "./Svg"
 import { UpDown, UpDownWide /*waveAnimation*/ } from "../styles/animations"
+import Content from "../elements/Content"
+import Inner from "../elements/Inner"
+
 
 const Contact = ({ offset, factor = 1 }) => {
   return (
@@ -46,8 +49,12 @@ const Contact = ({ offset, factor = 1 }) => {
           </div>
         </div>
       </Divider>
-
-      <Footer></Footer>
+      <Content speed={0.4} offset={offset} factor={factor}>
+        <Inner>
+          <h1>KONTAKT</h1>
+        </Inner>
+        <Footer></Footer>
+      </Content>
 
       <Divider speed={0.1} offset={offset} factor={factor}>
         <UpDown>

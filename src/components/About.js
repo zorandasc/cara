@@ -3,6 +3,8 @@ import React from "react"
 import Divider from "../elements/divider"
 import SVG from "./Svg"
 import { UpDown, UpDownWide } from "../styles/animations"
+import Content from "../elements/Content"
+import Inner from "../elements/Inner"
 
 const About = ({ offset, factor = 1 }) => {
   return (
@@ -10,9 +12,9 @@ const About = ({ offset, factor = 1 }) => {
       <Divider
         bg="linear-gradient(to right, #1f4037, #99f2c8)"
         clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)"
+        speed={0.2}
         offset={offset}
         factor={factor}
-        speed={0.2}
       ></Divider>
       <Divider speed={0.1} offset={offset} factor={factor}>
         <UpDown>
@@ -109,6 +111,13 @@ const About = ({ offset, factor = 1 }) => {
           top="70%"
         />
       </Divider>
+      <Content speed={0.4} offset={offset} factor={factor}>
+        <Inner>
+          <h1>O NAMA</h1>
+          <p>loremDuis laboris commodo nisi consectetur sunt aliqua. Mollit cillum aliquip Lorem in cupidatat id sint ad sit. 
+            Cillum ipsum consequat esse Lorem irure labore. Cupidatat nulla eu eu ipsum Lorem labore ex ipsum minim quis Lorem. Aute ea tempor do ut. Culpa tempor nulla id magna labore reprehenderit reprehenderit pariatur reprehenderit pariatur sit ut.</p>
+        </Inner>
+      </Content>
     </div>
   )
 }

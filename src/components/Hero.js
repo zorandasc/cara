@@ -1,8 +1,12 @@
-import React from "react"
+/** @jsx jsx */
+//import React from 'react';
+import { jsx } from "theme-ui"
 
 import Divider from "../elements/divider"
 import SVG from "./Svg"
 import { UpDown, UpDownWide } from "../styles/animations"
+import Content from "../elements/Content"
+import Inner from "../elements/Inner"
 
 const Hero = ({ offset, factor = 1 }) => {
   return (
@@ -16,6 +20,7 @@ const Hero = ({ offset, factor = 1 }) => {
             color="icon_orange"
             left="10%"
             top="20%"
+            hiddenMobile
           ></SVG>
           <SVG
             icon="hexa"
@@ -35,6 +40,7 @@ const Hero = ({ offset, factor = 1 }) => {
         </UpDown>
         <UpDownWide>
           <SVG
+            hiddenMobile
             icon="arrowUp"
             width={16}
             color="icon_blue"
@@ -80,6 +86,7 @@ const Hero = ({ offset, factor = 1 }) => {
             top="10%"
           />
           <SVG
+            hiddenMobile
             icon="upDown"
             width={8}
             color="icon_darkest"
@@ -154,7 +161,17 @@ const Hero = ({ offset, factor = 1 }) => {
           top="70%"
         />
       </Divider>
-      <h1>HERO</h1>
+      <Content sx={{ variant: `texts.bigger` }} speed={0.4} offset={offset} factor={factor}>
+        <Inner>
+          <h1 sx={{
+            variant:"styles.h1",
+            color:"icon_red",
+            textAlign: `center`,}}>
+              DECORWOOD
+          </h1>
+        </Inner>
+      </Content>
+
     </div>
   )
 }

@@ -3,6 +3,8 @@ import React from "react"
 import Divider from "../elements/divider"
 import SVG from "./Svg"
 import { UpDown, UpDownWide } from "../styles/animations"
+import Content from "../elements/Content"
+import Inner from "../elements/Inner"
 
 const Projects = ({ offset, factor = 2 }) => {
   return (
@@ -14,6 +16,11 @@ const Projects = ({ offset, factor = 2 }) => {
         bg="linear-gradient(to right, #c31432, #240b36)"
         clipPath="polygon(0 15%, 100% 25%, 100% 85%, 0 75%)"
       ></Divider>
+      <Content speed={0.4} offset={offset + 0.2} factor={factor}>
+        <Inner>
+          <h1>PROJEKTI</h1>
+        </Inner>
+      </Content>
       <Divider speed={0.1} offset={offset} factor={factor}>
         <UpDown>
           <SVG

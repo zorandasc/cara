@@ -84,7 +84,7 @@ const Svg = ({
         stroke: stroke ? `currentColor` : `none`,
         fill: stroke ? `none` : `currentColor`,
         //display: hiddenMobile?hidden:`block`
-        display: `block`,
+        display: hiddenMobile ? [`none`, `none`, `block`] : `block`,
         color,
         width,
         left,

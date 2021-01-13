@@ -1,9 +1,20 @@
-import React from 'react';
+/** @jsx jsx */
+//import React from "react"
+import { jsx } from "theme-ui"
 
-const Inner = () => {
+
+const Inner = ({ children, className = "" }) => {
     return (
-        <div>
-            inner
+        <div
+            sx={{
+                border: "1px solid red",
+                textAlign: `left`,
+                width: [`full`, `full`, `full`, `full`, `full`, `2/3`],
+                
+            }}
+            className={className}
+        >
+            {children}
         </div>
     );
 };

@@ -1,6 +1,8 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import React from 'react';
 import { Global } from "@emotion/core"
-//import { jsx } from "theme-ui"
+
 
 const Layout = ({ children, className = `` }) => {
     return (
@@ -34,6 +36,19 @@ const Layout = ({ children, className = `` }) => {
                     color: theme.colors.background,
                 },
             })}></Global>
+            {/*
+            <header
+                sx={{
+                    width: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    borderBottom: theme => `1px solid ${theme.colors.primary}`,
+                    height: '5rem'
+
+                }}>
+                Header content
+                </header>
+               */ }
             <main className={className}>{children}</main>
         </React.Fragment>
     );

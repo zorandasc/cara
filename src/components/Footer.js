@@ -1,10 +1,13 @@
-import React from 'react';
+/** @jsx jsx */
+//import React from 'react';
+import { Box, jsx } from "theme-ui"
 
 const Footer = () => {
     return (
-        <div>
-            Footer
-        </div>
+        <Box as="footer" variant="footer">
+            Copyright &copy; {new Date().getFullYear()}. All rights reserved.
+            <br />
+        </Box>
     );
 };
 

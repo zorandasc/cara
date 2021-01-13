@@ -1,7 +1,6 @@
 import { merge } from "theme-ui"
 import { tailwind } from "@theme-ui/presets"
 
-
 const theme = merge(tailwind, {
   initialColorModeName: `dark`,
   useCustomProperties: true,
@@ -85,13 +84,13 @@ const theme = merge(tailwind, {
     },
     h1: {
       //3rem, 4rem,4.5rem,5rem...
-      fontSize: [5,6,7,8],
+      fontSize: [5, 6, 7, 8],
       mt: 2,
       mb: 3,
       textShadow: `rgba(255, 255, 255, 0.15) 0px 5px 35px`,
       letterSpacing: `wide`,
       color: `heading`,
-      lineHeight:`heading`
+      lineHeight: `heading`,
     },
     h2: {
       fontSize: [4, 5, 6],

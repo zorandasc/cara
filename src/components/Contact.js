@@ -1,7 +1,4 @@
-/** @jsx jsx */
-//import React from "react"
-//import styled from "@emotion/styled"
-import { jsx } from "theme-ui"
+import React from "react"
 
 import Footer from "./footer"
 import Divider from "../elements/divider"

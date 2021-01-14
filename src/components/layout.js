@@ -1,10 +1,15 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import React from "react"
+import React, { useContext } from "react"
 import { Global } from "@emotion/core"
-import Header from "./Header"
+
+//import Header from "./Header"
+import Sidebar from "./Sidebar"
+import Navbar from "./Navbar"
+import { GatsbyContext } from "../context/context"
 
 const Layout = ({ children, className = `` }) => {
+  const { isSidebarOpen } = useContext(GatsbyContext)
   return (
     <React.Fragment>
       <Global
@@ -38,7 +43,8 @@ const Layout = ({ children, className = `` }) => {
           },
         })}
       ></Global>
-      <Header></Header>
+      <Navbar></Navbar>
+      {isSidebarOpen && <Sidebar></Sidebar>}
       <main className={className}>{children}</main>
     </React.Fragment>
   )

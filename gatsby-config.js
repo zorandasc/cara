@@ -33,6 +33,12 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-theme-ui`,
     {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
+    {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
         devMode: true,

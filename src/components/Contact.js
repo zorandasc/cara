@@ -13,6 +13,13 @@ const Contact = ({ offset, factor = 1 }) => {
     <div>
       <Divider fill="divider" speed={0.2} offset={offset} factor={factor}>
         <div
+        style={{
+            position: `absolute`,
+            bottom: 0,
+            width: `full`,
+            //invertuj oko x ose
+            transform: `matrix(1, 0, 0, -1, 0, 0)`,
+        }}/*
           sx={{
             position: `absolute`,
             bottom: 0,
@@ -20,13 +27,21 @@ const Contact = ({ offset, factor = 1 }) => {
             //invertuj oko x ose
             transform: `matrix(1, 0, 0, -1, 0, 0)`,
           }}
+          */
         >
           <div
+            style={{
+              position:'relative',
+              height:"100%",
+              svg: { width: `100%`, height: `80vh` },
+            }}
+            /*
             sx={{
               position: `relative`,
               height: `full`,
               svg: { width: `100%`, height: `80vh` },
             }}
+            */
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

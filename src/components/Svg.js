@@ -1,6 +1,5 @@
-/**@jsx jsx */
 import React from "react"
-import { jsx } from "theme-ui"
+import styled from "styled-components"
 
 //objekat koji sadrzi oblike
 const icons = {
@@ -68,33 +67,41 @@ const icons = {
 }
 
 const Svg = ({
-  stroke = false,
-  color = ``,
+  stroke, 
+  color,
   width,
   icon,
   left,
   top,
-  hiddenMobile = false,
+  hiddenMobile 
 }) => {
   return (
-    <svg
-      sx={{
-        position: `absolute`,
-        //'currentcolor' NESTO VEZANO SAMO ZA SVG
-        stroke: stroke ? `currentColor` : `none`,
-        fill: stroke ? `none` : `currentColor`,
-        //display: hiddenMobile?hidden:`block`
-        display: hiddenMobile ? [`none`, `none`, `block`] : `block`,
-        color,
-        width,
-        left,
-        top,
-      }}
+    <Wrapper 
       viewBox={icons[icon].viewBox}
-    >
-      {icons[icon].shape}
-    </svg>
+      stroke={stroke}
+      width={width}
+      color={color}
+      left={left}
+      top={top}
+      hiddenMobile={hiddenMobile}
+      >{icons[icon].shape}</Wrapper>
   )
 }
 
+const Wrapper=styled.svg`
+${props=>console.log(props.hiddenMobile==="true"?'none':"block") }
+  position:absolute;
+  stroke:${props=>(props.stroke==="true" ? `var(${props.color})` : `none`)};
+  fill:${props=>(props.stroke==="true" ? `none` : `var(${props.color})`)};
+  color:${props=>`var(${props.color})`};
+  width:${props=>props.width};
+  left:${props=>props.left};
+  top:${props=>props.top}; 
+  
+  &{
+    @media (max-width: 700px) {
+      display:${props=>props.hiddenMobile==="true"?'none':"block"}
+    }
+  }
+`
 export default Svg

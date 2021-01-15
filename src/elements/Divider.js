@@ -6,6 +6,7 @@ import { ParallaxLayer } from "react-spring/renderprops-addons.cjs"
 const Divider = ({ speed, offset, factor, children = null, bg, clipPath, fill }) => {
     return (
         <ParallaxLayer
+        style={{}}
             sx={{
                 position: "absolute",
                 widows: "full",

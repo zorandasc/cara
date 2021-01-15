@@ -30,7 +30,7 @@ const Navbar = () => {
           {links.map((item, index) => {
             return (
               <li key={index}>
-                <a fade to={item.path}>
+                <a to={item.path}>
                   {item.text}
                 </a>
               </li>

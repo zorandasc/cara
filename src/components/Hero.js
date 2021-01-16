@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react"
 
 import Divider from "../elements/divider"
 import SVG from "./Svg"
@@ -117,7 +117,14 @@ const Hero = ({ offset, factor = 1 }) => {
           left="5%"
           top="70%"
         />
-        <SVG icon="circle" stroke="false" width="1.5rem" color="--colors-icon_darkest" left="4%" top="20%" />
+        <SVG
+          icon="circle"
+          stroke="false"
+          width="1.5rem"
+          color="--colors-icon_darkest"
+          left="4%"
+          top="20%"
+        />
         <SVG
           icon="circle"
           //width={12}//3rem
@@ -155,13 +162,15 @@ const Hero = ({ offset, factor = 1 }) => {
           left="25%"
           top="5%"
         />
-        <SVG icon="circle" 
+        <SVG
+          icon="circle"
           //width={64}
-          width="16rem" 
+          width="16rem"
           stroke="false"
-          color="--colors-icon_green" 
-          left="95%" 
-          top="5%" />
+          color="--colors-icon_green"
+          left="95%"
+          top="5%"
+        />
         <SVG
           icon="box"
           hiddenMobile="true"
@@ -172,8 +181,22 @@ const Hero = ({ offset, factor = 1 }) => {
           left="5%"
           top="90%"
         />
-        <SVG icon="box" width="1.5rem" stroke="false" color="--colors-icon_darkest" left="10%" top="10%" />
-        <SVG icon="box" width="3rem" stroke="false"color="--colors-icon_darkest" left="40%" top="30%" />
+        <SVG
+          icon="box"
+          width="1.5rem"
+          stroke="false"
+          color="--colors-icon_darkest"
+          left="10%"
+          top="10%"
+        />
+        <SVG
+          icon="box"
+          width="3rem"
+          stroke="false"
+          color="--colors-icon_darkest"
+          left="40%"
+          top="30%"
+        />
         <SVG
           icon="hexa"
           //width={16}
@@ -193,14 +216,15 @@ const Hero = ({ offset, factor = 1 }) => {
           top="70%"
         />
       </Divider>
-      <Content /*sx={{ variant: `texts.bigger` }}*/ speed={0.4} offset={offset} factor={factor}>
+      <Content
+        /*sx={{ variant: `texts.bigger` }}*/ speed={0.4}
+        offset={offset}
+        factor={factor}
+      >
         <Inner>
-          <h1>
-              DECORWOOD
-          </h1>
+          <h1>DECORWOOD</h1>
         </Inner>
       </Content>
-
     </div>
   )
 }

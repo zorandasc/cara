@@ -66,17 +66,9 @@ const icons = {
   },
 }
 
-const Svg = ({
-  stroke, 
-  color,
-  width,
-  icon,
-  left,
-  top,
-  hiddenMobile 
-}) => {
+const Svg = ({ stroke, color, width, icon, left, top, hiddenMobile }) => {
   return (
-    <Wrapper 
+    <Wrapper
       viewBox={icons[icon].viewBox}
       stroke={stroke}
       width={width}
@@ -84,23 +76,26 @@ const Svg = ({
       left={left}
       top={top}
       hiddenMobile={hiddenMobile}
-      >{icons[icon].shape}</Wrapper>
+    >
+      {icons[icon].shape}
+    </Wrapper>
   )
 }
 
-const Wrapper=styled.svg`
-${props=>console.log(props.hiddenMobile==="true"?'none':"block") }
+const Wrapper = styled.svg`
+  ${props => console.log(props.hiddenMobile === "true" ? "none" : "block")}
   position:absolute;
-  stroke:${props=>(props.stroke==="true" ? `var(${props.color})` : `none`)};
-  fill:${props=>(props.stroke==="true" ? `none` : `var(${props.color})`)};
-  color:${props=>`var(${props.color})`};
-  width:${props=>props.width};
-  left:${props=>props.left};
-  top:${props=>props.top}; 
-  
-  &{
-    @media (max-width: 700px) {
-      display:${props=>props.hiddenMobile==="true"?'none':"block"}
+  stroke: ${props =>
+    props.stroke === "true" ? `var(${props.color})` : `none`};
+  fill: ${props => (props.stroke === "true" ? `none` : `var(${props.color})`)};
+  color: ${props => `var(${props.color})`};
+  width: ${props => props.width};
+  left: ${props => props.left};
+  top: ${props => props.top};
+
+  & {
+    @media (max-width: 800px) {
+      display: ${props => (props.hiddenMobile === "true" ? "none" : "block")};
     }
   }
 `

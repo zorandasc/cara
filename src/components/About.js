@@ -125,7 +125,7 @@ const About = ({ offset, factor = 1 }) => {
       </Divider>
       <Content speed={0.4} offset={offset} factor={factor}>
         <Inner>
-          <h1>O NAMA</h1>
+          <h2>O NAMA</h2>
           <p>
             loremDuis laboris commodo nisi consectetur sunt aliqua. Mollit
             cillum aliquip Lorem in cupidatat id sint ad sit. Cillum ipsum

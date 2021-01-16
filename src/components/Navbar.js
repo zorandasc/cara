@@ -6,10 +6,8 @@ import links from "../constants/links"
 import logo from "../images/logo.svg"
 import { GatsbyContext } from "../context/context"
 
-
 const Navbar = () => {
   const { isSidebarOpen, showSidebar } = useContext(GatsbyContext)
-
 
   return (
     <Wrapper>
@@ -28,9 +26,7 @@ const Navbar = () => {
           {links.map((item, index) => {
             return (
               <li key={index}>
-                <a to={item.path}>
-                  {item.text}
-                </a>
+                <a to={item.path}>{item.text}</a>
               </li>
             )
           })}
@@ -42,9 +38,9 @@ const Navbar = () => {
 
 const Wrapper = styled.nav`
   position: fixed;
-  top:0;
-  padding-top:2rem;
-  width:100%;
+  top: 0;
+  padding-top: 2rem;
+  width: 100%;
   background: transparent;
   z-index: 1;
   height: 3.5rem;
@@ -63,6 +59,9 @@ const Wrapper = styled.nav`
     justify-content: space-between;
     img {
       width: auto;
+    }
+    a {
+      margin-right: 4rem;
     }
     .toggle-btn {
       width: 3.2rem;
@@ -85,7 +84,6 @@ const Wrapper = styled.nav`
   .nav-links {
     list-style-type: none;
     display: none;
-
   }
 
   @media (min-width: 800px) {
@@ -105,23 +103,41 @@ const Wrapper = styled.nav`
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       max-width: 500px;
-    }
-    li {
-      padding: 1rem 0;
-      position: relative;
-      
-    }
-    a {
-      color: var(--clr-white);
-      background: transparent;
-      border: transparent;
-      font-size: 1rem;
-      letter-spacing: 2px;
-      font-weight: 500;
-      padding: 10px 20px;
-      width: 100%;
-      text-transform: capitalize;
-      position: relative;
+
+      li {
+        padding: 1rem 0;
+        position: relative;
+        cursor: pointer;
+      }
+      a {
+        position: relative;
+        color: var(--clr-white);
+        background: transparent;
+        border: transparent;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        font-weight: 500;
+        padding: 10px 20px;
+        width: 100%;
+        text-transform: capitalize;
+        position: relative;
+      }
+      a::before {
+        content: "";
+        display: block;
+        height: 2px;
+        color: var(--clr-white);
+        background: var(--clr-white);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 3em;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
+      }
+      a:hover::before {
+        transform: scale(1, 1);
+      }
     }
   }
 `

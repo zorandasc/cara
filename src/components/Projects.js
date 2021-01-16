@@ -1,4 +1,5 @@
 import React from "react"
+import { css } from "@emotion/react"
 
 import Divider from "../elements/divider"
 import SVG from "./Svg"
@@ -18,7 +19,7 @@ const Projects = ({ offset, factor = 2 }) => {
       ></Divider>
       <Content speed={0.4} offset={offset - 0.2} factor={factor}>
         <Inner>
-          <h1>PROJEKTI</h1>
+          <h2>PROJEKTI</h2>
         </Inner>
       </Content>
       <Divider speed={0.1} offset={offset} factor={factor}>

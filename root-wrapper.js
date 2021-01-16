@@ -115,8 +115,8 @@ h4 {
   text-transform: capitalize;
   line-height: 1.25;
   margin-bottom: 0.75rem;
-  font-family: var(--ff-primary);
-  font-weight: 400;
+  font-family: "Caveat", cursive;
+  font-weight: 600;
 }
 h1 {
   font-size: 2rem;
@@ -132,14 +132,14 @@ h4 {
 }
 p {
   margin-bottom: 1.25rem;
-  color: var(--clr-grey-3);
+  color: var(--colors-text);
 }
 @media screen and (min-width: 800px) {
   h1 {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
   }
   h2 {
-    font-size: 2.5rem;
+    font-size: 4rem;
   }
   h3 {
     font-size: 1.75rem;
@@ -201,7 +201,6 @@ export const wrapRootElement = ({ element }) => {
     <>
       <GlobalStyle></GlobalStyle>
       <GatsbyProvider>{element}</GatsbyProvider>
-      
     </>
   )
 }

@@ -16,6 +16,26 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: "Roboto",
+              variants: [`400`, `500`, `700`],
+            },
+            {
+              family: "Open Sans",
+              variants: ["300", "700"],
+            },
+            {
+              family: `Caveat`,
+            },
+          ],
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -31,7 +51,6 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     `gatsby-plugin-emotion`,
-    `gatsby-plugin-theme-ui`,
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {

@@ -1,5 +1,5 @@
 import React from "react"
-
+import { css } from "@emotion/react"
 import Divider from "../elements/divider"
 import SVG from "./Svg"
 import { UpDown, UpDownWide } from "../styles/animations"
@@ -222,11 +222,39 @@ const Hero = ({ offset, factor = 1 }) => {
         factor={factor}
       >
         <Inner>
-          <h1>DECORWOOD</h1>
+          <h1 css={css`
+            text-transform: uppercase;
+            font-weight: 500;
+            line-height: 1.25;
+            margin: 2rem 0 2rem 0;
+            letter-spacing: 3px;
+             @media (min-width: 600px) {  
+                font-size:4rem;     
+                    }
+              @media (min-width: 800px) {  
+                font-size:6rem;     
+                        letter-spacing: 5px;
+                      
+                    }`}>
+                    DECORWOOD
+           </h1>
+            <h3 css={css`
+              font-size:1.6rem;
+              font-weight: 400;
+              font-family: "Caveat", cursive;
+              color:var(--colors-icon_orange);
+              @media (min-width: 800px) {
+                      
+                        font-size:2rem;
+                    
+                    }`}>
+               Jedinstveni Dekoratvni Predmeti Od Drveta
+          </h3>
         </Inner>
       </Content>
     </div>
   )
 }
 
+//Uniq And Stylish Decorative Items
 export default Hero

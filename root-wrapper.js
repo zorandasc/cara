@@ -10,6 +10,7 @@ Variables
 ===============
 */
 :root {
+--colors-background: #141821;
 --colors-grayDark:#2d3748;
 --colors-text:#e2e8f0;
 --colors-background:#141821;
@@ -91,8 +92,8 @@ Global Styles
 }
 body {
   font-family: var(--ff-secondary);
-  background: var(--clr-white);
-  color: var(--clr-grey-1);
+  background: var(--colors-background);
+  color: var(--colors-text);
   line-height: 1.5;
   font-size: 0.875rem;
 }

@@ -7,7 +7,7 @@ const Inner = ({ children, className = "" }) => {
     <div
       css={css`
         border: 1px solid red;
-        text-align: left;
+        text-align: center;
         width: 100%;
         @media (min-width: 800px) {
           width: 75%;

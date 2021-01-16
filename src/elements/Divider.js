@@ -1,25 +1,24 @@
 /** @jsx jsx */
+import { jsx, css } from "@emotion/react"
 //import React from 'react';
-import { jsx } from "theme-ui"
 import { ParallaxLayer } from "react-spring/renderprops-addons.cjs"
 
 const Divider = ({ speed, offset, factor, children = null, bg, clipPath, fill }) => {
     return (
         <ParallaxLayer
-        style={{}}
-            sx={{
-                position: "absolute",
-                widows: "full",
-                height: "full",
-                background: bg,
-                backgroundColor: bg,
-                "#contact-wave": {
-                    color: fill,
-                    fill: `currentColor`,
-                },
-                clipPath
+            css={css`
+                position:absolute;
+                width:100%;
+                height:100%;
+                background:${bg};
+                background-color:${bg};
+                clip-path:${clipPath};
+                #contact-wave{
+                    color:var(${fill}) ;
+                    fill: var(${fill});
+                }    
+            `}
 
-            }}
             speed={speed}
             offset={offset}
             factor={factor}>
@@ -28,4 +27,9 @@ const Divider = ({ speed, offset, factor, children = null, bg, clipPath, fill })
     );
 };
 
+
+//"#contact-wave": {
+//                    color: fill,
+ //                   fill: `currentColor`,
+ //               },
 export default Divider;

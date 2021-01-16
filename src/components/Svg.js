@@ -83,7 +83,6 @@ const Svg = ({ stroke, color, width, icon, left, top, hiddenMobile }) => {
 }
 
 const Wrapper = styled.svg`
-  ${props => console.log(props.hiddenMobile === "true" ? "none" : "block")}
   position:absolute;
   stroke: ${props =>
     props.stroke === "true" ? `var(${props.color})` : `none`};

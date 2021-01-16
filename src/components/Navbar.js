@@ -1,8 +1,6 @@
 import React, { useContext } from "react"
-//import styled from "styled-components"
 import styled from "@emotion/styled"
 import { GoThreeBars } from "react-icons/go"
-//import { Link } from "gatsby"
 
 import links from "../constants/links"
 import logo from "../images/logo.svg"
@@ -17,7 +15,7 @@ const Navbar = () => {
     <Wrapper>
       <div className="nav-center">
         <div className="nav-header">
-          <a to="/">
+          <a href="/">
             <img src={logo} alt="design"></img>
           </a>
           {!isSidebarOpen && (
@@ -45,12 +43,14 @@ const Navbar = () => {
 const Wrapper = styled.nav`
   position: fixed;
   top:0;
+  padding-top:2rem;
   width:100%;
   background: transparent;
   z-index: 1;
-  height: 5rem;
+  height: 3.5rem;
   display: flex;
   align-items: center;
+  //border-bottom:1px solid var(--clr-white);
   .nav-center {
     width: 90vw;
     margin: 0 auto;
@@ -65,13 +65,13 @@ const Wrapper = styled.nav`
       width: auto;
     }
     .toggle-btn {
-      width: 3.5rem;
-      height: 2.25rem;
+      width: 3.2rem;
+      height: 3.2rem;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.5rem;
-      border-radius: 2rem;
+      border-radius: 10rem;
       border: transparent;
       color: var(--clr-white);
       background: var(--clr-primary-5);
@@ -109,8 +109,9 @@ const Wrapper = styled.nav`
     li {
       padding: 1rem 0;
       position: relative;
+      
     }
-    button {
+    a {
       color: var(--clr-white);
       background: transparent;
       border: transparent;

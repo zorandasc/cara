@@ -1,5 +1,5 @@
 
-import { keyframes, css } from "@emotion/core"
+import { jsx, css, keyframes } from '@emotion/react'
 import styled from "@emotion/styled"
 
 //The shape of a <path> element is defined by one arameter: d. (See more in basic shapes.) The d attribute contains a series of commands and parameters used by those commands.

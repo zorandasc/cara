@@ -1,11 +1,11 @@
 import React, { useContext } from "react"
-//import styled from "styled-components"
+
 import styled from "@emotion/styled"
 import { MdClose } from "react-icons/md"
 
 import links from "../constants/links"
 import { GatsbyContext } from "../context/context"
-//import { Link } from "gatsby"
+
 
 const Sidebar = () => {
   const { hideSidebar } = useContext(GatsbyContext)

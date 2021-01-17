@@ -1,40 +1,117 @@
-import React, { useContext } from "react"
+import React, {  useRef, useState } from "react"
 import styled from "@emotion/styled"
 import { GoThreeBars } from "react-icons/go"
+import { useSpring, useChain, useTransition,animated, config } from "react-spring"
 
 import links from "../constants/links"
 import logo from "../images/logo.svg"
-import { GatsbyContext } from "../context/context"
+
 
 const Navbar = () => {
-  const { toggleSidebar, showSidebar } = useContext(GatsbyContext)
+
+  const [open, setOpen] = useState(false)
+ 
+  const springRef=useRef()
+  const transRef=useRef()
+
+  const { size } = useSpring({
+        ref: springRef,
+        config: config.stiff,
+        from: { size: "0%" },
+        to: { size: open? "15%" : "0%"},
+    })
+  
+  const transition = useTransition(open ? links : [], item => item.text, {
+        ref: transRef,
+        unique: true,
+        trail: 400 / links.length,
+        from: { opacity: 0, transform: "scale(0)" },
+        enter: { opacity: 1, transform: "scale(1)" },
+        leave: { opacity: 0, transform: "scale(0)" }
+  })
+
+ useChain(open? [springRef, transRef] : [transRef, springRef], [0, open ? 0.1 : 0.6])
 
   return (
+    <>
+    <SideBar style={{  height: size }}  onClick={() => setOpen(open => !open)} >
+        {transition.map(({ item, key, props },i) =>(
+            <animated.li key={key} style={{ ...props}}>
+              <a href="#">{item.text}</a>
+            </animated.li>
+        ))}
+    </SideBar>
     <Wrapper>
       <div className="nav-center">
         <div className="nav-header">
           <a href="/">
             <img src={logo} alt="design"></img>
           </a>
-          {
-            <button className="toggle-btn" onClick={toggleSidebar}>
+            <button className="toggle-btn" onClick={() => setOpen(open => !open)}>
               <GoThreeBars></GoThreeBars>
             </button>
-          }
         </div>
         <ul className="nav-links">
           {links.map((item, index) => {
             return (
               <li key={index}>
-                <a to={item.path}>{item.text}</a>
+                <a href={item.path}>{item.text}</a>
               </li>
             )
           })}
         </ul>
       </div>
     </Wrapper>
+    </>
   )
 }
+
+const SideBar = styled(animated.ul)`
+  position: absolute;
+  left:0;
+  top: 5rem;
+  width: 100vw;
+  z-index:100;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+   li {
+        padding: 0.5rem 0;
+        border-radius:50%;
+        width:5rem;
+        height:5rem;   
+        
+      }
+      a {
+        text-align:center;
+        color: var(--colors-text);
+        background: transparent;
+        border: transparent;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        font-weight: 500;
+        width: 100%;
+        height:100%;
+        text-transform: capitalize; 
+        display:flex;
+        justify-content:center;
+        align-items:center;   
+      }
+    li:nth-of-type(1){
+      background:linear-gradient(to right, #c31432, #240b36);
+    
+    }
+    li:nth-of-type(2){
+      background:linear-gradient(to left, #1f4037, #99f2c8);
+     
+    }
+    li:nth-of-type(3){
+      background: linear-gradient(to right, #43c6ac, #191654);
+    }
+  @media (min-width: 800px) {  
+        display: none;   
+    }
+`
 
 const Wrapper = styled.nav`
   position: fixed;
@@ -73,7 +150,7 @@ const Wrapper = styled.nav`
       border-radius: 10rem;
       border: transparent;
       color: var(--clr-white);
-      background: var(--clr-primary-5);
+      background:linear-gradient(to right, #fe8c00, #f83600);
       cursor: pointer;
       transition: var(--transition);
       &:hover {

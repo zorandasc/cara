@@ -1,8 +1,9 @@
-import React, {  useRef, useState } from "react"
+import React, {  useRef, useState ,useContext} from "react"
 import styled from "@emotion/styled"
 import { GoThreeBars } from "react-icons/go"
 import { useSpring, useChain, useTransition,animated, config } from "react-spring"
 
+import { GatsbyContext } from "../context/context"
 import links from "../constants/links"
 import logo from "../images/logo.svg"
 
@@ -10,15 +11,17 @@ import logo from "../images/logo.svg"
 const Navbar = () => {
 
   const [open, setOpen] = useState(false)
- 
+
   const springRef=useRef()
   const transRef=useRef()
+
+  const { parall } = useContext(GatsbyContext)
 
   const { size } = useSpring({
         ref: springRef,
         config: config.stiff,
         from: { size: "0%" },
-        to: { size: open? "15%" : "0%"},
+        to: { size: open? "12%" : "0%"},
     })
   
   const transition = useTransition(open ? links : [], item => item.text, {
@@ -32,19 +35,21 @@ const Navbar = () => {
 
  useChain(open? [springRef, transRef] : [transRef, springRef], [0, open ? 0.1 : 0.6])
 
+
+
   return (
     <>
     <SideBar style={{  height: size }}  onClick={() => setOpen(open => !open)} >
         {transition.map(({ item, key, props },i) =>(
             <animated.li key={key} style={{ ...props}}>
-              <a href="#">{item.text}</a>
+              <a href={item.path} onClick={(e) =>{ e.preventDefault();parall.scrollTo(i +2)}}>{item.text}</a>
             </animated.li>
         ))}
     </SideBar>
     <Wrapper>
       <div className="nav-center">
         <div className="nav-header">
-          <a href="/">
+          <a href="/" onClick={(e) =>{ e.preventDefault();parall.scrollTo(0)}}>
             <img src={logo} alt="design"></img>
           </a>
             <button className="toggle-btn" onClick={() => setOpen(open => !open)}>
@@ -55,7 +60,11 @@ const Navbar = () => {
           {links.map((item, index) => {
             return (
               <li key={index}>
-                <a href={item.path}>{item.text}</a>
+                <a 
+                  href={item.path} 
+                  onClick={(e) =>{ e.preventDefault();parall.scrollTo(index +2)}}>
+                    {item.text}
+                </a>
               </li>
             )
           })}
@@ -75,12 +84,14 @@ const SideBar = styled(animated.ul)`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  
    li {
         padding: 0.5rem 0;
         border-radius:50%;
         width:5rem;
         height:5rem;   
-        
+        background-color:var(--colors-background);
+        border:1px solid var(--colors-text);
       }
       a {
         text-align:center;
@@ -97,17 +108,7 @@ const SideBar = styled(animated.ul)`
         justify-content:center;
         align-items:center;   
       }
-    li:nth-of-type(1){
-      background:linear-gradient(to right, #c31432, #240b36);
     
-    }
-    li:nth-of-type(2){
-      background:linear-gradient(to left, #1f4037, #99f2c8);
-     
-    }
-    li:nth-of-type(3){
-      background: linear-gradient(to right, #43c6ac, #191654);
-    }
   @media (min-width: 800px) {  
         display: none;   
     }
@@ -125,7 +126,7 @@ const Wrapper = styled.nav`
   align-items: center;
 
   .nav-center {
-    width: 90vw;
+    width: 85vw;
     margin: 0 auto;
     max-width: var(--max-width);
   }
@@ -138,6 +139,7 @@ const Wrapper = styled.nav`
       width: auto;
     }
     a {
+      
       margin-right: 4rem;
     }
     .toggle-btn {
@@ -149,6 +151,7 @@ const Wrapper = styled.nav`
       font-size: 1.5rem;
       border-radius: 10rem;
       border: transparent;
+      outline:none;
       color: var(--clr-white);
       background:linear-gradient(to right, #fe8c00, #f83600);
       cursor: pointer;

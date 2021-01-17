@@ -3,8 +3,12 @@ import React, { useState } from "react"
 const GatsbyContext = React.createContext()
 
 const GatsbyProvider = ({ children }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  //const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
+  //ZA SKROLOVANJE U NAVABARU ZA PARALLEXU U INDEXU
+  const [parall, setParall] = useState(null)
+  
+/*
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen)
   }
@@ -15,14 +19,16 @@ const GatsbyProvider = ({ children }) => {
   const hideSidebar = () => {
     setIsSidebarOpen(false)
   }
-
+*/
   return (
     <GatsbyContext.Provider
       value={{
-        isSidebarOpen,
-        showSidebar,
-        toggleSidebar,
-        hideSidebar,
+       // isSidebarOpen,
+       // showSidebar,
+       //toggleSidebar,
+       // hideSidebar,
+        parall,
+        setParall
       }}
     >
       {children}

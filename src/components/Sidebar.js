@@ -1,17 +1,16 @@
 import React, { useContext } from "react"
-
+import { animated } from "react-spring"
 import styled from "@emotion/styled"
 import { MdClose } from "react-icons/md"
 
-import links from "../constants/links"
 import { GatsbyContext } from "../context/context"
+import links from "../constants/links"
 
-
-const Sidebar = () => {
+const Sidebar = ({ style }) => {
   const { hideSidebar } = useContext(GatsbyContext)
 
   return (
-    <Wrapper>
+    <Wrapper style={style}>
       <div className="container">
         <button onClick={hideSidebar}>
           <MdClose className="icon" />
@@ -19,11 +18,9 @@ const Sidebar = () => {
         <div className="links">
           {links.map((item, index) => {
             return (
-              
-                <a key={index} to={item.path}>
-                  {item.text}
-                </a>
-             
+              <a key={index} to={item.path}>
+                {item.text}
+              </a>
             )
           })}
         </div>
@@ -32,12 +29,11 @@ const Sidebar = () => {
   )
 }
 
-const Wrapper = styled.aside`
+const Wrapper = styled(animated.aside)`
   position: fixed;
-  top: 0;
+  top: 4rem;
   left: 0;
   width: 100%;
-  height: 100%;
   z-index: 999;
   display: flex;
   align-items: center;
@@ -49,7 +45,6 @@ const Wrapper = styled.aside`
   .container {
     background: white;
     width: 80vw;
-    height: 80vh;
     border-radius: 0.25rem;
     position: relative;
     padding: 4rem 2rem 2rem 2rem;

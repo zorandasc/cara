@@ -1,9 +1,7 @@
-
-import { jsx, css, keyframes } from '@emotion/react'
+import { css, keyframes } from "@emotion/react"
 import styled from "@emotion/styled"
 
 //The shape of a <path> element is defined by one arameter: d. (See more in basic shapes.) The d attribute contains a series of commands and parameters used by those commands.
-
 
 const wave = keyframes`
     0% {
@@ -26,7 +24,6 @@ to{
 }
 `
 
-
 const upDownWideFrame = keyframes`
 from{
     transform: translateY(0);
@@ -37,15 +34,12 @@ to{
 `
 //animaciona funkcija
 const upDownAnimation = props => css`
-    animation:${upDownFrame} 4s ease-in-out infinite alternate
-    
+  animation: ${upDownFrame} 4s ease-in-out infinite alternate;
 `
 //animaciona funkcija
 const upDownWideAnimation = props => css`
-    animation: ${upDownWideFrame} 16s ease-in-out infinite alternate
+  animation: ${upDownWideFrame} 16s ease-in-out infinite alternate;
 `
-
-
 
 export const UpDown = styled.div`
   ${upDownAnimation}

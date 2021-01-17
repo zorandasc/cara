@@ -12,6 +12,15 @@ const Hero = ({ offset, factor = 1 }) => {
       <Divider speed={0.2} offset={offset} factor={factor}>
         <UpDown>
           <SVG
+            icon="cross"
+            //width={16}
+            width="4rem"
+            stroke="true"
+            color="--colors-icon_pink"
+            left="28%"
+            top="15%"
+          />
+          <SVG
             icon="triangle"
             //width={48}//12rem
             width="12rem"
@@ -83,9 +92,10 @@ const Hero = ({ offset, factor = 1 }) => {
             //width={16}
             width="4rem"
             stroke="true"
-            color="--colors-icon_pink"
-            left="28%"
+            color="--colors-icon_blue"
+            left="6%"
             top="15%"
+            hiddenMobile="true"
           />
           <SVG
             icon="circle"

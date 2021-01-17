@@ -7,7 +7,7 @@ import logo from "../images/logo.svg"
 import { GatsbyContext } from "../context/context"
 
 const Navbar = () => {
-  const { isSidebarOpen, showSidebar } = useContext(GatsbyContext)
+  const { toggleSidebar, showSidebar } = useContext(GatsbyContext)
 
   return (
     <Wrapper>
@@ -16,11 +16,11 @@ const Navbar = () => {
           <a href="/">
             <img src={logo} alt="design"></img>
           </a>
-          {!isSidebarOpen && (
-            <button className="toggle-btn" onClick={showSidebar}>
+          {
+            <button className="toggle-btn" onClick={toggleSidebar}>
               <GoThreeBars></GoThreeBars>
             </button>
-          )}
+          }
         </div>
         <ul className="nav-links">
           {links.map((item, index) => {
@@ -46,7 +46,7 @@ const Wrapper = styled.nav`
   height: 3.5rem;
   display: flex;
   align-items: center;
-  //border-bottom:1px solid var(--clr-white);
+
   .nav-center {
     width: 90vw;
     margin: 0 auto;

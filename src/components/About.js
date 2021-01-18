@@ -13,7 +13,7 @@ const About = ({ offset, factor = 1 }) => {
     <div>
       <Divider
         bg="linear-gradient(to bottom, #1f4037, #99f2c8)"
-         //bg="linear-gradient(to right, #c31432, #240b36)"
+        //bg="linear-gradient(to right, #c31432, #240b36)"
         clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)"
         speed={0.2}
         offset={offset}
@@ -137,13 +137,16 @@ const About = ({ offset, factor = 1 }) => {
                 consequat esse Lorem irure labore. Cupidatat nulla eu eu ipsum
                 Lorem labore ex ipsum minim quis Lorem. Aute ea tempor do ut.
                 Culpa tempor nulla id magna labore reprehenderit reprehenderit
-                pariatur reprehenderit pariatur sit ut. BRACO I SINOVI DOO. Mi smo ta Ekipa :)
+                pariatur reprehenderit pariatur sit ut. BRACO I SINOVI DOO. Mi
+                smo ta Ekipa :)
               </p>
             </div>
-            <div className="imgContainer" style={{    
-                backgroundImage:`url(${img})`}}>
-              
-            </div>
+            <div
+              className="imgContainer"
+              style={{
+                backgroundImage: `url(${img})`,
+              }}
+            ></div>
           </Wrapper>
         </Inner>
       </Content>
@@ -166,33 +169,32 @@ const Wrapper = styled.div`
     }
   }
   .imgContainer {
-      background-color:wheat;
-      width:100%;
-      height:70vh;
-      background-repeat:no-repeat;
-      background-position:center center;
-      background-size:auto 75%;
-      will-change: transform;
-      border-radius: 10px;
-      box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
-    }
+    margin: 0 auto;
+    background-color: wheat;
+    width: 100%;
+    max-width: 400px;
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 75%;
+    will-change: transform;
+    border-radius: 10px;
+    box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4),
+      0 10px 10px -10px rgba(50, 50, 73, 0.3);
+  }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1220px) {
     display: grid;
-    grid-template-columns: 350px auto;
+    grid-template-columns: 1fr 1fr;
     grid-column-gap: 4rem;
-    align-items: center;
     .text {
       p {
         font-size: 1.3rem;
         line-height: 1.5;
       }
     }
-    .imgContainer{
-      height:80vh;
-      max-height: 570px;
-      max-width:300px;
-      background-size:auto 85%;
+    .imgContainer {
+      background-size: auto 85%;
     }
   }
 `

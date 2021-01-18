@@ -10,7 +10,7 @@ const Inner = ({ children, className = "" }) => {
         text-align: center;
         width: 100%;
         @media (min-width: 800px) {
-          width: 75%;
+          width: 85%;
         }
       `}
       className={className}

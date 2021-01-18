@@ -13,6 +13,7 @@ const About = ({ offset, factor = 1 }) => {
     <div>
       <Divider
         bg="linear-gradient(to bottom, #1f4037, #99f2c8)"
+         //bg="linear-gradient(to right, #c31432, #240b36)"
         clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)"
         speed={0.2}
         offset={offset}
@@ -136,13 +137,11 @@ const About = ({ offset, factor = 1 }) => {
                 consequat esse Lorem irure labore. Cupidatat nulla eu eu ipsum
                 Lorem labore ex ipsum minim quis Lorem. Aute ea tempor do ut.
                 Culpa tempor nulla id magna labore reprehenderit reprehenderit
-                pariatur reprehenderit pariatur sit ut. Lorem labore ex ipsum
-                minim quis Lorem. Aute ea tempor do ut. Culpa tempor nulla id
-                magna labore. BRACO I SINOVI DOO. Mi smo ta Ekipa :)
+                pariatur reprehenderit pariatur sit ut. BRACO I SINOVI DOO. Mi smo ta Ekipa :)
               </p>
             </div>
             <div className="imgContainer">
-              <img src={img}></img>
+              <img alt="Nesto o nama. Porodicno blago." src={img}></img>
             </div>
           </Wrapper>
         </Inner>
@@ -166,21 +165,23 @@ const Wrapper = styled.div`
     }
   }
   .imgContainer {
-    box-shadow: var(--darkShadow);
-  }
+    
+    
+    img { 
+      display: block;
+      margin:0 auto;
+      box-shadow: var(--darkShadow);
+      border-radius: 8px;
+      max-width: 100%;
+      max-height: 400px;
+      }
+    }
 
   @media (min-width: 800px) {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 350px auto;
     grid-column-gap: 4rem;
     align-items: center;
-    .imgContainer {
-      max-width: 500px;
-      max-height: 500px;
-    }
-    .imgContainer img {
-      max-height: 500px;
-    }
     .text {
       p {
         font-size: 1.3rem;

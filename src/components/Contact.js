@@ -1,6 +1,9 @@
 /** @jsx jsx */
-import { jsx, css } from "@emotion/react"
+import { jsx, css } from '@emotion/react'
 //import React from "react"
+import styled from '@emotion/styled'
+import { FaFacebook, FaTwitter,FaWhatsapp,FaInstagram,FaYoutube } from "react-icons/fa";
+
 
 import Footer from "./footer"
 import Divider from "../elements/divider"
@@ -9,7 +12,14 @@ import { UpDown, UpDownWide /*waveAnimation*/ } from "../styles/animations"
 import Content from "../elements/Content"
 import Inner from "../elements/Inner"
 
+
+
+
+
 const Contact = ({ offset, factor = 1 }) => {
+
+
+
   return (
     <div>
       <Divider
@@ -58,6 +68,22 @@ const Contact = ({ offset, factor = 1 }) => {
       <Content speed={0.4} offset={offset} factor={factor}>
         <Inner>
           <h2>KONTAKT</h2>
+          <p css={css`
+              font-size: 1.3rem;
+              font-weight: 500;
+              font-family: "Caveat", cursive;
+              color: var(--colors-icon_orange);
+              @media (min-width: 800px) {
+                font-size: 1.7rem;
+              }
+            `}>Ostanite u kontaktu, pišite nam.</p>
+          <Container>
+            <a href="#"><i><FaFacebook css={css`color:#3b5998;`}></FaFacebook></i></a>
+            <a href="#"><i><FaTwitter css={css`color:#00acee;`}></FaTwitter></i></a>
+            <a href="#"><i><FaInstagram css={css`color:#f14843;`}></FaInstagram></i></a>
+            <a href="#"><i><FaYoutube css={css`color:#f00;`}></FaYoutube></i></a>
+            <a href="#"><i><FaWhatsapp css={css`color:#4fce5d;`}></FaWhatsapp></i></a>
+          </Container>
         </Inner>
         <Footer></Footer>
       </Content>
@@ -139,5 +165,68 @@ const Contact = ({ offset, factor = 1 }) => {
     </div>
   )
 }
+
+const Container=styled.div`
+
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  margin-top:5rem;
+
+a {
+    cursor: pointer;
+    background:#ddd;
+    width:65px;
+    height:65px;
+    margin:5px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    box-shadow:6px 6px 10px -1px rgba(0,0,0,0.15),
+                -6px -6px 10px -1px rgba(255,255,255,0.7);
+    border:1px solid rgba(0,0,0,0);
+    transition:transform 0.5s;
+    i{
+      font-size:35px;
+      color:#777;
+      transition:transform 0.5s;
+      line-height:0;
+    }
+    &:hover{
+      box-shadow:inset 4px 4px 6px -1px rgba(0,0,0,0.6),
+                 inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+                 -0.5px -0.5px 0px rgba(255,255,255,1),
+                 0.5px 0.5px 0px rgba(0,0,0,0.15),
+                 0px 12px 10px -10px rgba(0,0,0,0.05);
+      border:1px solid rgba(0,0,0,0.01);
+      transform:translateY(2px);
+      i{
+        transform:scale(0.9)
+      }
+      :nth-of-type(1) i svg{
+        color:#3b5998;
+      }
+      :nth-of-type(2) i svg{
+        color:#00acee;
+      }
+      :nth-of-type(3) i svg{
+        color:#f14843;
+      }
+      :nth-of-type(4) i svg{
+        color:#f00;
+      }
+      :nth-of-type(5) i svg{
+        color:#4fce5d;
+      }
+    }
+    @media (min-width: 800px) {
+        :nth-of-type(n) i svg{
+        color:#777;
+      }
+    }
+}
+`
 
 export default Contact

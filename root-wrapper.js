@@ -98,6 +98,8 @@ body {
   color: var(--colors-text);
   line-height: 1.5;
   font-size: 0.875rem;
+  //ovo da se sprijeci overscroll kod using gesture
+  overscroll-behavior-x: none;
 }
 ul {
   list-style-type: none;

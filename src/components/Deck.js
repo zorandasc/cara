@@ -14,7 +14,7 @@ const cards = [
 
 //helperske funkcije
 //svaki spring je deklarisan sa: x,y , scal, rot
-const from =i=>({x:0,y:-1000,scale:1.5,rot:0})
+const from =i=>({x:-1000,y:0,scale:1.5,rot:0})
 const to=i=>({x:0,y:i*-4, scale:1, rot:-10+Math.random()*30, delay:i*200})
 //to i from funkcije vracaju objekte
 //promjenjive unutar objekat se mjenjaju tokom gesturea, koje vraca setSpring
@@ -106,7 +106,7 @@ const Wrapper = styled.div`
   align-items: flex-start;
   position: fixed;
   left:0;
-  bottom:2rem;
+  bottom:6rem;
   
   >div{
      

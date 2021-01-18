@@ -140,8 +140,9 @@ const About = ({ offset, factor = 1 }) => {
                 pariatur reprehenderit pariatur sit ut. BRACO I SINOVI DOO. Mi smo ta Ekipa :)
               </p>
             </div>
-            <div className="imgContainer">
-              <img alt="Nesto o nama. Porodicno blago." src={img}></img>
+            <div className="imgContainer" style={{    
+                backgroundImage:`url(${img})`}}>
+              
             </div>
           </Wrapper>
         </Inner>
@@ -165,16 +166,15 @@ const Wrapper = styled.div`
     }
   }
   .imgContainer {
-    
-    
-    img { 
-      display: block;
-      margin:0 auto;
-      box-shadow: var(--darkShadow);
-      border-radius: 8px;
-      max-width: 100%;
-      max-height: 400px;
-      }
+      background-color:wheat;
+      width:100%;
+      height:70vh;
+      background-repeat:no-repeat;
+      background-position:center center;
+      background-size:auto 75%;
+      will-change: transform;
+      border-radius: 10px;
+      box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
     }
 
   @media (min-width: 800px) {
@@ -187,6 +187,12 @@ const Wrapper = styled.div`
         font-size: 1.3rem;
         line-height: 1.5;
       }
+    }
+    .imgContainer{
+      height:80vh;
+      max-height: 570px;
+      max-width:300px;
+      background-size:auto 85%;
     }
   }
 `

@@ -1,127 +1,150 @@
-import React, {  useRef, useState ,useContext} from "react"
+import React, { useRef, useState, useContext } from "react"
 import styled from "@emotion/styled"
 import { GoThreeBars } from "react-icons/go"
-import { useSpring, useChain, useTransition,animated, config } from "react-spring"
+import {
+  useSpring,
+  useChain,
+  useTransition,
+  animated,
+  config,
+} from "react-spring"
 
 import { GatsbyContext } from "../context/context"
 import links from "../constants/links"
 import logo from "../images/logo.svg"
 
-
 const Navbar = () => {
-
   const [open, setOpen] = useState(false)
 
-  const springRef=useRef()
-  const transRef=useRef()
+  const springRef = useRef()
+  const transRef = useRef()
 
   const { parall } = useContext(GatsbyContext)
 
   const { size } = useSpring({
-        ref: springRef,
-        config: config.stiff,
-        from: { size: "0%" },
-        to: { size: open? "12%" : "0%"},
-    })
-  
-  const transition = useTransition(open ? links : [], item => item.text, {
-        ref: transRef,
-        unique: true,
-        trail: 400 / links.length,
-        from: { opacity: 0, transform: "scale(0)" },
-        enter: { opacity: 1, transform: "scale(1)" },
-        leave: { opacity: 0, transform: "scale(0)" }
+    ref: springRef,
+    config: config.stiff,
+    from: { size: "0%" },
+    to: { size: open ? "25%" : "0%" },
   })
 
- useChain(open? [springRef, transRef] : [transRef, springRef], [0, open ? 0.1 : 0.6])
+  const transition = useTransition(open ? links : [], item => item.text, {
+    ref: transRef,
+    unique: true,
+    trail: 400 / links.length,
+    from: { opacity: 0, transform: "scale(0)" },
+    enter: { opacity: 1, transform: "scale(1)" },
+    leave: { opacity: 0, transform: "scale(0)" },
+  })
 
-
+  useChain(open ? [springRef, transRef] : [transRef, springRef], [
+    0,
+    open ? 0.1 : 0.6,
+  ])
 
   return (
     <>
-    <SideBar style={{  height: size }}  onClick={() => setOpen(open => !open)} >
-        {transition.map(({ item, key, props },i) =>(
-            <animated.li key={key} style={{ ...props}}>
-              <a href={item.path} onClick={(e) =>{ e.preventDefault();parall.scrollTo(i +2)}}>{item.text}</a>
-            </animated.li>
+      <SideBar style={{ height: size }} onClick={() => setOpen(open => !open)}>
+        {transition.map(({ item, key, props }, i) => (
+          <animated.li key={key} style={{ ...props }}>
+            <a
+              href={item.path}
+              onClick={e => {
+                e.preventDefault()
+                parall.scrollTo(i + 2)
+              }}
+            >
+              {item.text}
+            </a>
+          </animated.li>
         ))}
-    </SideBar>
-    <Wrapper>
-      <div className="nav-center">
-        <div className="nav-header">
-          <a href="/" onClick={(e) =>{ e.preventDefault();parall.scrollTo(0)}}>
-            <img src={logo} alt="design"></img>
-          </a>
-            <button className="toggle-btn" onClick={() => setOpen(open => !open)}>
+      </SideBar>
+      <Wrapper>
+        <div className="nav-center">
+          <div className="nav-header">
+            <a
+              href="/"
+              onClick={e => {
+                e.preventDefault()
+                parall.scrollTo(0)
+              }}
+            >
+              <img src={logo} alt="design"></img>
+            </a>
+            <button
+              className="toggle-btn"
+              onClick={() => setOpen(open => !open)}
+            >
               <GoThreeBars></GoThreeBars>
             </button>
-        </div>
-        <ul className="nav-links">
-          {links.map((item, index) => {
-            return (
-              <li key={index}>
-                <a 
-                  href={item.path} 
-                  onClick={(e) =>{ e.preventDefault();parall.scrollTo(index +2)}}>
+          </div>
+          <ul className="nav-links">
+            {links.map((item, index) => {
+              return (
+                <li key={index}>
+                  <a
+                    href={item.path}
+                    onClick={e => {
+                      e.preventDefault()
+                      parall.scrollTo(index + 2)
+                    }}
+                  >
                     {item.text}
-                </a>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
-    </Wrapper>
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      </Wrapper>
     </>
   )
 }
 
 const SideBar = styled(animated.ul)`
   position: absolute;
-  left:0;
-  top: 5rem;
+  left: 0;
+  top: 0;
   width: 100vw;
-  z-index:100;
+  z-index: 9;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-around;
-  
-   li {
-        padding: 0.5rem 0;
-        border-radius:50%;
-        width:5rem;
-        height:5rem;   
-        background-color:var(--colors-background);
-        border:1px solid var(--colors-text);
-      }
-      a {
-        text-align:center;
-        color: var(--colors-text);
-        background: transparent;
-        border: transparent;
-        font-size: 1rem;
-        letter-spacing: 2px;
-        font-weight: 500;
-        width: 100%;
-        height:100%;
-        text-transform: capitalize; 
-        display:flex;
-        justify-content:center;
-        align-items:center;   
-      }
-    
-  @media (min-width: 800px) {  
-        display: none;   
-    }
+  background-color: var(--colors-background);
+  border-bottom: 1px solid white;
+  li {
+    padding: 1.4rem 0;
+  }
+  a {
+    text-align: center;
+    color: var(--colors-text);
+    background: transparent;
+    border: transparent;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    width: 100%;
+    height: 100%;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (min-width: 800px) {
+    display: none;
+  }
 `
 
 const Wrapper = styled.nav`
   position: fixed;
   top: 0;
+  left: 0;
   padding-top: 2rem;
   width: 100%;
   background: transparent;
-  z-index: 1;
-  height: 3.5rem;
+  z-index: 10;
+  height: 4.2rem;
   display: flex;
   align-items: center;
 
@@ -138,10 +161,7 @@ const Wrapper = styled.nav`
     img {
       width: auto;
     }
-    a {
-      
-      margin-right: 4rem;
-    }
+
     .toggle-btn {
       width: 3.2rem;
       height: 3.2rem;
@@ -151,14 +171,9 @@ const Wrapper = styled.nav`
       font-size: 1.5rem;
       border-radius: 10rem;
       border: transparent;
-      outline:none;
+      outline: none;
       color: var(--clr-white);
-      background:linear-gradient(to right, #fe8c00, #f83600);
-      cursor: pointer;
-      transition: var(--transition);
-      &:hover {
-        background: var(--clr-primary-3);
-      }
+      background: linear-gradient(to right, #fe8c00, #f83600);
     }
   }
   .nav-links {
@@ -170,6 +185,9 @@ const Wrapper = styled.nav`
     .nav-header {
       .toggle-btn {
         display: none;
+      }
+      a {
+        margin-right: 4rem;
       }
     }
     .nav-center {

@@ -10,13 +10,13 @@ const Projects = ({ offset, factor = 2 }) => {
   return (
     <div>
       <Divider
-        offset={1}
+        offset={1.1}
         factor={factor}
         speed={-0.2}
         bg="linear-gradient(to right, #c31432, #240b36)"
         clipPath="polygon(0 15%, 100% 25%, 100% 85%, 0 75%)"
       ></Divider>
-      <Content speed={0.4} offset={offset - 0.2} factor={factor}>
+      <Content speed={0.4} offset={offset + 0.2} factor={factor}>
         <Inner>
           <h2>PROJEKTI</h2>
         </Inner>

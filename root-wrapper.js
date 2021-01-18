@@ -75,6 +75,8 @@ Variables
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --text-shadow:3px 3px 3px rgba(0, 0, 0, 0.8);
   --max-width: 1170px;
   --fixed-width: 620px;
 }
@@ -117,6 +119,7 @@ h4 {
   margin-bottom: 0.75rem;
   font-family: "Caveat", cursive;
   font-weight: 600;
+  text-shadow: var(--text-shadow);
 }
 h1 {
   font-size: 2rem;

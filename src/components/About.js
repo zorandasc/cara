@@ -6,7 +6,7 @@ import SVG from "./Svg"
 import { UpDown, UpDownWide } from "../styles/animations"
 import Content from "../elements/Content"
 import Inner from "../elements/Inner"
-import img from "../images/123.jpg"
+import Flip from "../components/Flip"
 
 const About = ({ offset, factor = 1 }) => {
   return (
@@ -141,12 +141,8 @@ const About = ({ offset, factor = 1 }) => {
                 smo ta Ekipa :)
               </p>
             </div>
-            <div
-              className="imgContainer"
-              style={{
-                backgroundImage: `url(${img})`,
-              }}
-            ></div>
+
+            <Flip></Flip>
           </Wrapper>
         </Inner>
       </Content>
@@ -157,6 +153,10 @@ const About = ({ offset, factor = 1 }) => {
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
   .text {
     margin-bottom: 3rem;
     h2 {
@@ -168,36 +168,15 @@ const Wrapper = styled.div`
       text-shadow: var(--text-shadow);
     }
   }
-  .imgContainer {
-    margin: 0 auto;
-    background-color: wheat;
-    width: 100%;
-    max-width: 400px;
-    height: 60vh;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: auto 85%;
-    will-change: transform;
-    border-radius: 10px;
-    box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4),
-      0 10px 10px -10px rgba(50, 50, 73, 0.3);
-    @media (min-width: 390px) {
-      height: 70vh;
-    }
-  }
 
-  @media (min-width: 1220px) {
-    display: grid;
+  @media (min-width: 1200px) {
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 4rem;
+
     .text {
       p {
         font-size: 1.3rem;
         line-height: 1.5;
       }
-    }
-    .imgContainer {
-      background-size: auto 85%;
     }
   }
 `

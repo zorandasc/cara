@@ -107,6 +107,9 @@ const Wrapper = styled.div`
   position: fixed;
   left:0;
   bottom:6rem;
+   @media (min-width: 800px) {
+       display:none;
+   }
   
   >div{
      

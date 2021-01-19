@@ -6,6 +6,7 @@ import { UpDown, UpDownWide } from "../styles/animations"
 import Content from "../elements/Content"
 import Inner from "../elements/Inner"
 import Deck from "../components/Deck"
+import Slider from "../components/Slider"
 
 const Projects = ({ offset, factor = 2 }) => {
   return (
@@ -22,6 +23,7 @@ const Projects = ({ offset, factor = 2 }) => {
         <Inner>
           <h2>PROJEKTI</h2>
           <Deck></Deck>
+          <Slider></Slider>
         </Inner>
         
       </Content>

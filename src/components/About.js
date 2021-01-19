@@ -173,14 +173,17 @@ const Wrapper = styled.div`
     background-color: wheat;
     width: 100%;
     max-width: 400px;
-    height: 70vh;
+    height: 60vh;
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: auto 75%;
+    background-size: auto 85%;
     will-change: transform;
     border-radius: 10px;
     box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4),
       0 10px 10px -10px rgba(50, 50, 73, 0.3);
+    @media (min-width: 390px) {
+      height: 70vh;
+    }
   }
 
   @media (min-width: 1220px) {

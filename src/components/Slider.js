@@ -249,11 +249,6 @@ const Wrapper = styled.div`
     right: 10%;
   }
 
-  .drugiSektor {
-    background-color: hotpink;
-    width: 100vw;
-    height: 100vh;
-  }
 `
 
 export default Slider

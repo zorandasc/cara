@@ -5,7 +5,7 @@ const GatsbyContext = React.createContext()
 const GatsbyProvider = ({ children }) => {
   //const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
-  //ZA SKROLOVANJE U NAVABARU ZA PARALLEXU U INDEXU
+  //ZA SKROLOVANJE KLIKOM U NAVABARU ZA PARALLEXU U INDEXU
   const [parall, setParall] = useState(null)
   
 /*

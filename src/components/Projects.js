@@ -15,36 +15,36 @@ const Projects = ({ offset, factor = 2 }) => {
         offset={1.1}
         factor={factor}
         speed={-0.2}
-        bg="linear-gradient(to right, #c31432, #240b36)"
-        //bg="linear-gradient(to bottom, #1f4037, #99f2c8)"
+        //bg="linear-gradient(to right, #c31432, #240b36)"
+        bg="linear-gradient(to bottom, #1f4037, #99f2c8)"
         clipPath="polygon(0 15%, 100% 25%, 100% 85%, 0 75%)"
       ></Divider>
-      <Content speed={0.4} offset={offset +0.2} factor={factor}>
+      <Content speed={0.4} offset={offset + 0.2} factor={factor}>
         <Inner>
           <h2>PROJEKTI</h2>
-          <Deck></Deck>
         </Inner>
-      <Slider></Slider>
+        <Deck></Deck>
+        <Slider></Slider>
       </Content>
       <Divider speed={0.1} offset={offset} factor={factor}>
         <UpDown>
           <SVG
             icon="box"
-            width="1.5rem"
+            width="2.5rem"
             color="--colors-icon_brightest"
             left="85%"
             top="75%"
           />
           <SVG
             icon="upDown"
-            width="2rem"
+            width="3rem"
             color="--colors-icon_teal"
             left="70%"
             top="20%"
           />
           <SVG
             icon="triangle"
-            width="2rem"
+            width="5rem"
             stroke="true"
             color="--colors-icon_orange"
             left="25%"
@@ -57,6 +57,14 @@ const Projects = ({ offset, factor = 2 }) => {
             color="--colors-icon_blue"
             left="17%"
             top="60%"
+          />
+          <SVG
+            icon="circle"
+            hiddenMobile="true"
+            width="5rem"
+            color="--colors-icon_darkest"
+            left="27%"
+            top="80%"
           />
         </UpDown>
         <UpDownWide>

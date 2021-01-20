@@ -53,7 +53,7 @@ const Wrapper = styled.div`
   will-change: transform, opacity;
   &::before {
     position: absolute;
-    content: "SWIPE ME, AKO SMEŠ :-)";
+    content: "SWIPE ILI KLIK, AKO SMEŠ :-)";
     color: var(--colors-warning);
     font-size: 1.5rem;
     font-family: "Caveat", cursive;

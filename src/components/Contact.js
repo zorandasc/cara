@@ -142,9 +142,9 @@ const Contact = ({ offset, factor = 1 }) => {
           />
           <SVG
             icon="triangle"
-            width="2rem"
+            width="3rem"
             stroke="true"
-            color="--colors-icon_brightest"
+            color="--colors-icon_orange"
             left="25%"
             top="5%"
           />
@@ -154,12 +154,12 @@ const Contact = ({ offset, factor = 1 }) => {
             icon="triangle"
             width="3rem"
             stroke="true"
-            color="--colors-icon_brightest"
+            color="--colors-icon_yellow"
             left="95%"
             top="50%"
           />
           <SVG
-            icon="circle"
+            icon="box"
             width="1.5rem"
             color="--colors-icon_brightest"
             left="85%"
@@ -189,11 +189,19 @@ const Contact = ({ offset, factor = 1 }) => {
           top="60%"
         />
         <SVG
+          hiddenMobile="true"
           icon="box"
           width="6rem"
           color="--colors-icon_green"
           left="20%"
           top="30%"
+        />
+        <SVG
+          icon="circle"
+          width="4rem"
+          color="--colors-icon_green"
+          left="40%"
+          top="10%"
         />
         <SVG
           icon="hexa"

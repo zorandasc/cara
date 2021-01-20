@@ -173,6 +173,8 @@ const Wrapper = styled.div`
     max-width: 300px;
     height: 50vw;
     max-height: 500px;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: multiply;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;

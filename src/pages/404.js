@@ -1,11 +1,11 @@
 import React from "react"
-
+import Layout from "../components/Layout"
 
 
 const NotFoundPage = () => (
-  <>
-    404
-  </>
+  <Layout>
+    <h1>404. Ova stranica ne postoji</h1>
+  </Layout>
 )
 
 export default NotFoundPage

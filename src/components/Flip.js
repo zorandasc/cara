@@ -23,7 +23,7 @@ function Flip() {
   return (
     <Wrapper
       onClick={() => setFliped(!fliped)}
-      onTouchEnd={() => setFliped(!fliped)}
+      onTouchStart={() => setFliped(!fliped)}
     >
       {/*SVA SLIKA KAD JE JEDNA OPACITY 1 DRUHA MORA BITII O ZATO INTERPOLATE, TAKODJE KAD SE ROTIRA FRONT DA NE BUDE NAGLAVACKE ZATO INTERPOLATE*/}
       <a.div

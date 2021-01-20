@@ -10,6 +10,8 @@ import { useGesture } from "react-use-gesture"
 
 import slides from "../constants/slideData"
 
+
+
 const from = i => ({ xTrans: 0, rot: 0, opacity: 0,  })
 
 const to = (i, slideIndex) => {
@@ -21,6 +23,7 @@ const to = (i, slideIndex) => {
     scale: 1,
     xMouse:0,
     yMouse:0,
+   
   }
 }
 
@@ -70,7 +73,8 @@ const Slider = () => {
           return { xMouse:0,yMouse:0,scale:1,config:config.molasses }
         })
       }
-  })
+  })///GESTURE, ODNSONO ONMOVE MIJENJA SAMO OVE PARAMETRE xMouse,yMouse,scale, 
+  // I TO NA O ITEMU, ONHOVER VRACA NA POCETNO
 
 
   
@@ -89,7 +93,7 @@ const Slider = () => {
     
       <Wrapper>
         <div className="slides">
-          {springs.map(({ xTrans, xMouse,yMouse, rot, opacity, scale }, i) => {
+          {springs.map(({ xTrans, xMouse,yMouse, rot, opacity, scale, }, i) => {
             //i ide od 0 do 14
             //prave vrijednosti,  se ponavljaju da bi se dobio efekat
             //kontinualnosti, stog j ide
@@ -98,6 +102,7 @@ const Slider = () => {
             return (
               <animated.div key={i} className="slide" 
               >
+                {/*
                 <animated.div
                   className="slideBackground"
                   style={{
@@ -109,7 +114,7 @@ const Slider = () => {
                     transform:rot.interpolate(r=>`translateX(calc(10% * ${r}))`)
                   }}
                 ></animated.div>
-
+                    */}
                 <animated.div
                   {...bind(i)}
                   className="slideContent"
@@ -117,7 +122,8 @@ const Slider = () => {
                     
                     backgroundImage: `url(${slides[j].image})`,
                     transform: interpolate([xTrans, xMouse,yMouse, rot, scale], trans),
-                    opacity,
+                    //opacity,
+                    
                   }}
                 >
                   <animated.div
@@ -158,7 +164,7 @@ const Wrapper = styled.div`
   height: 100vh;
   position: relative;
   display:none;
-   @media (min-width: 800px) {
+  @media (min-width: 800px) {
        display:block;
    }
   .slides {
@@ -184,6 +190,7 @@ const Wrapper = styled.div`
     transform-style: preserve-3d;
     display: grid;
     align-items: center;
+    border-radius:8px;
   }
   .slideBackground {
     position: fixed;
@@ -229,11 +236,14 @@ const Wrapper = styled.div`
   }
 
   button {
-    background: transparent;
-    color: white;
+    //background: transparent;
+    background: var(--colors-textMuted);
+    //color: #777;
+    color: var(--colors-text);
     outline: none;
     position: absolute;
     font-size: 1rem;
+    border-radius: 8px;
     width: 5rem;
     height: 5rem;
     top: 50%;
@@ -241,14 +251,28 @@ const Wrapper = styled.div`
     opacity: 0.8;
     z-index: 2;
     cursor: pointer;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+      -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0);
+    transition: transform 0.5s;
+    &:hover {
+      box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.6),
+        inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+        -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+        0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+        0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.01);
+      
+    }
   }
   .prev {
-    left: 10%;
+    left: 20%;
   }
   .next {
-    right: 10%;
+    right: 20%;
   }
 
+  
 `
 
 export default Slider

@@ -28,8 +28,5 @@ const Divider = ({ speed, offset, factor, children = null, bg, clipPath, fill })
 };
 
 
-//"#contact-wave": {
-//                    color: fill,
- //                   fill: `currentColor`,
- //               },
+
 export default Divider;

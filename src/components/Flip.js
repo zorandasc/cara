@@ -21,7 +21,10 @@ function Flip() {
   })
 
   return (
-    <Wrapper onClick={() => setFliped(!fliped)}>
+    <Wrapper
+      onClick={() => setFliped(!fliped)}
+      onTouchEnd={() => setFliped(!fliped)}
+    >
       {/*SVA SLIKA KAD JE JEDNA OPACITY 1 DRUHA MORA BITII O ZATO INTERPOLATE, TAKODJE KAD SE ROTIRA FRONT DA NE BUDE NAGLAVACKE ZATO INTERPOLATE*/}
       <a.div
         className="c back"
@@ -50,7 +53,7 @@ const Wrapper = styled.div`
   will-change: transform, opacity;
   &::before {
     position: absolute;
-    content: "KLIKNE ME :-)";
+    content: "DOTAKNI ME AKO SMEŠ :-)";
     color: var(--colors-icon_orange);
     font-size: 1.5rem;
     font-family: "Caveat", cursive;

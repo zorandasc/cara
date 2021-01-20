@@ -25,7 +25,7 @@ const Navbar = () => {
     ref: springRef,
     config: config.stiff,
     from: { size: "0%" },
-    to: { size: open ? "25%" : "0%" },
+    to: { size: open ? "30%" : "0%" },
   })
 
   const transition = useTransition(open ? links : [], item => item.text, {
@@ -140,14 +140,14 @@ const Wrapper = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 1.3rem;
+  padding-top: 1.8rem;
   width: 100%;
   background: transparent;
   z-index: 10;
   height: 4.2rem;
   display: flex;
   align-items: center;
-  
+
   .nav-center {
     width: 85vw;
     margin: 0 auto;
@@ -159,7 +159,6 @@ const Wrapper = styled.nav`
     align-items: center;
     justify-content: space-between;
     img {
-      
       width: auto;
     }
 
@@ -183,7 +182,11 @@ const Wrapper = styled.nav`
   }
 
   @media (min-width: 800px) {
-    background: linear-gradient(to bottom, rgba(20, 24, 33,.6), rgb(20, 24, 33,.2));
+    background: linear-gradient(
+      to bottom,
+      rgba(20, 24, 33, 0.6),
+      rgb(20, 24, 33, 0.2)
+    );
     .nav-header {
       .toggle-btn {
         display: none;

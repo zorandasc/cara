@@ -83,7 +83,7 @@ const Hero = ({ offset, factor = 1 }) => {
             //width={16}//4rem
             width="4rem"
             stroke="true"
-            color="--colors-icon_darkest"
+            color="--colors-icon_blue"
             left="30%"
             top="65%"
           />
@@ -131,7 +131,7 @@ const Hero = ({ offset, factor = 1 }) => {
           icon="circle"
           stroke="false"
           width="1.5rem"
-          color="--colors-icon_darkest"
+          color="--colors-icon_yellow"
           left="4%"
           top="20%"
         />
@@ -235,7 +235,7 @@ const Hero = ({ offset, factor = 1 }) => {
           <h1
             css={css`
               text-transform: uppercase;
-              font-size: 2.5rem;
+              font-size: 2.8rem;
 
               line-height: 1.25;
               margin: 1rem 0 1rem 0;
@@ -253,11 +253,11 @@ const Hero = ({ offset, factor = 1 }) => {
           </h1>
           <h3
             css={css`
-              font-size: 1.4rem;
+              font-size: 1.8rem;
               font-weight: 500;
               color: var(--colors-icon_orange);
               @media (min-width: 800px) {
-                font-size: 2rem;
+                font-size: 2.5rem;
               }
             `}
           >

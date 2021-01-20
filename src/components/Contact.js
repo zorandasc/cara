@@ -68,12 +68,12 @@ const Contact = ({ offset, factor = 1 }) => {
           <h2>KONTAKT</h2>
           <p
             css={css`
-              font-size: 1.3rem;
+              font-size: 1.5rem;
               font-weight: 500;
               font-family: "Caveat", cursive;
               color: var(--colors-icon_orange);
               @media (min-width: 800px) {
-                font-size: 1.7rem;
+                font-size: 2rem;
               }
             `}
           >

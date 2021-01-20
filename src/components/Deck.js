@@ -43,7 +43,7 @@ const Deck = () => {
         //i ide za sve springove
         setSprings(i=>{
             // We're only interested in changing spring-data for the current spring
-            if(index !=i)  {
+            if(index !==i)  {
                 console.log("kurec")
                 return }
 
@@ -65,7 +65,7 @@ const Deck = () => {
             return {x,rot,scale, delay: undefined, config:{friction:50, tension:down?800:isGone?200:500}}
         })
         //vrati sve na pocetak ako su svi otisli
-        if(!down && gone.size==cards.length) {
+        if(!down && gone.size===cards.length) {
             setTimeout(()=>{gone.clear() || setSprings(i=>to(i))},600)}
 
     })

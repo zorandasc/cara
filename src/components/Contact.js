@@ -80,7 +80,7 @@ const Contact = ({ offset, factor = 1 }) => {
             Ostanite u kontaktu, pišite nam.
           </p>
           <Container>
-            <a href="#">
+            <a href="/#">
               <i>
                 <FaFacebook
                   css={css`
@@ -89,7 +89,7 @@ const Contact = ({ offset, factor = 1 }) => {
                 ></FaFacebook>
               </i>
             </a>
-            <a href="#">
+            <a href="/#">
               <i>
                 <FaTwitter
                   css={css`
@@ -98,7 +98,7 @@ const Contact = ({ offset, factor = 1 }) => {
                 ></FaTwitter>
               </i>
             </a>
-            <a href="#">
+            <a href="/#">
               <i>
                 <FaInstagram
                   css={css`
@@ -107,7 +107,7 @@ const Contact = ({ offset, factor = 1 }) => {
                 ></FaInstagram>
               </i>
             </a>
-            <a href="#">
+            <a href="/#">
               <i>
                 <FaYoutube
                   css={css`
@@ -116,7 +116,7 @@ const Contact = ({ offset, factor = 1 }) => {
                 ></FaYoutube>
               </i>
             </a>
-            <a href="#">
+            <a href="/#">
               <i>
                 <FaWhatsapp
                   css={css`

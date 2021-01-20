@@ -7,6 +7,10 @@ import {
   config,
 } from "react-spring"
 import { useGesture } from "react-use-gesture"
+import {
+  GoTriangleLeft,
+  GoTriangleRight
+} from "react-icons/go"
 
 import slides from "../constants/slideData"
 
@@ -56,7 +60,7 @@ const Slider = () => {
           //odnosno ovim dobijamo da se samo jedan taknuti i pomjera
           //a da bi se onemogucilo da se se susjedni ,rotiranin, na klik ne pomjeraju
           //koristimo slides.length + (slideIndex.current - i)==0
-          if (index === i && slides.length + (current - i)==0) {
+          if (index === i && slides.length + (current - i) === 0) {
             
             const xMouse=-(py - window.innerHeight / 2) / 10
             const yMouse=(px - window.innerWidth / 2) / 10
@@ -147,10 +151,10 @@ const Slider = () => {
             )
           })}
           <button className="prev" onClick={handlePrev}>
-            PREV
+            <i><GoTriangleLeft></GoTriangleLeft></i>
           </button>
           <button className="next" onClick={handleNext}>
-            NEXT
+            <i><GoTriangleRight></GoTriangleRight></i>
           </button>
         </div>
         <div className="drugiSektor"></div>
@@ -182,8 +186,8 @@ const Wrapper = styled.div`
     //border:2px solid red;
     width: 30vw;
     max-width: 300px;
-    height: 40vw;
-    max-height: 400px;
+    height: 50vw;
+    max-height: 500px;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -264,6 +268,11 @@ const Wrapper = styled.div`
         0px 12px 10px -10px rgba(0, 0, 0, 0.05);
       border: 1px solid rgba(0, 0, 0, 0.01);
       
+    }
+    i {
+      font-size: 35px;
+      color: #777;
+      line-height: 0;
     }
   }
   .prev {

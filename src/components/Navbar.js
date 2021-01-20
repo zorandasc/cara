@@ -140,7 +140,7 @@ const Wrapper = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 1rem;
+  padding-top: 1.3rem;
   width: 100%;
   background: transparent;
   z-index: 10;

@@ -106,7 +106,7 @@ const Wrapper = styled.div`
   align-items: flex-start;
   position: fixed;
   left:0;
-  bottom:6rem;
+  bottom:4rem;
    @media (min-width: 800px) {
        display:none;
    }

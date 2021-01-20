@@ -46,7 +46,7 @@ module.exports = {
         short_name: `DecoorWood`,
         start_url: `/`,
         background_color: `#141821`,
-        theme_color: `linear-gradient(to right, #fe8c00, #f83600)`,
+        theme_color: ` #f83600`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },

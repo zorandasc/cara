@@ -10,8 +10,8 @@ import {
   FaYoutube,
 } from "react-icons/fa"
 
-import Footer from "./footer"
-import Divider from "../elements/divider"
+import Footer from "./Footer"
+import Divider from "../elements/Divider"
 import SVG from "./Svg"
 import { UpDown, UpDownWide /*waveAnimation*/ } from "../styles/animations"
 import Content from "../elements/Content"

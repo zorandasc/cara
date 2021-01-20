@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import Divider from "../elements/divider"
+import Divider from "../elements/Divider"
 import SVG from "./Svg"
 import { UpDown, UpDownWide } from "../styles/animations"
 import Content from "../elements/Content"

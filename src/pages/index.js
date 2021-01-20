@@ -2,7 +2,7 @@ import React,{useContext} from "react"
 import { Parallax } from "react-spring/renderprops-addons.cjs"
 
 import { GatsbyContext } from "../context/context"
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import Hero from "../components/Hero"
 import Projects from "../components/Projects"
 import About from "../components/About"

@@ -1,8 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+     title: `DecorWood`,
+    description: `DecorWood. Jedinstveni Dekoratvni Predmeti Od Drveta `,
+    author: `@zorandasic`,
+    titleTemplate: `%s | Gatsby - DecorWood`,
+    siteUrl: `https://svadbenicvet.com`,
+    image: `123.png`,
+    twitterUsername: ``,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -38,11 +42,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Decoorwood`,
+        short_name: `DecoorWood`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#141821`,
+        theme_color: `#ed8936`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },

@@ -28,7 +28,7 @@ const to = (i, slideIndex) => {
 }
 
 const trans = (xTrans, xMouse, yMouse, r, s) =>
-  `perspective(1000px) translateX(calc(100% * ${xTrans})) rotateX(${xMouse}deg) rotateY(calc(-45deg*${r} + ${yMouse}deg)) scale(${s}) `
+  `perspective(800px) translateX(calc(100% * ${xTrans})) rotateX(${xMouse}deg) rotateY(calc(-65deg*${r} + ${yMouse}deg)) scale(${s}) `
 
 
 
@@ -192,6 +192,7 @@ const Wrapper = styled.div`
     align-items: center;
     border-radius:8px;
   }
+  /*
   .slideBackground {
     position: fixed;
     top: 0;
@@ -211,10 +212,10 @@ const Wrapper = styled.div`
     left: 0px;
     top: 0px;
     z-index: -1;}
-
+*/
   .slideContentInner {
     padding-left:4rem;
-    color: #fff;
+    color: var(--clr-white);
     transform-style: preserve-3d;
     text-shadow: 0 0.1rem 1rem #000;
   }

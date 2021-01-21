@@ -13,7 +13,7 @@ const About = ({ offset, factor = 1 }) => {
     <div>
       <Divider
         //bg="linear-gradient(to bottom, #1f4037, #99f2c8)"
-        bg="linear-gradient(to right, #c31432, #240b36)"
+        bg="linear-gradient(to top, #c31432, #240b36)"
         clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)"
         speed={0.2}
         offset={offset}

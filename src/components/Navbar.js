@@ -140,11 +140,10 @@ const Wrapper = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 1.8rem;
   width: 100%;
   background: transparent;
   z-index: 10;
-  height: 4.2rem;
+  height: 5.2rem;
   display: flex;
   align-items: center;
 

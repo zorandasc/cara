@@ -99,7 +99,7 @@ const Deck = () => {
 const Wrapper = styled.div`
   
   width: 100%;
-  height: 90vh;
+  height: 100%;
   position: relative;
   
    @media (min-width: 800px) {
@@ -118,7 +118,8 @@ const Wrapper = styled.div`
   >div{
       cursor: grab;
       margin-top:4rem;
-      background-color:wheat;
+      background-color:var(--clr-grey-9);
+
       width:45vh;
       max-width:300px;
       height:80vh;

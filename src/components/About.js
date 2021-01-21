@@ -132,13 +132,14 @@ const About = ({ offset, factor = 1 }) => {
             <div className="text">
               <h2>O NAMA</h2>
               <p>
-                loremDuis laboris commodo nisi consectetur sunt aliqua. Mollit
-                cillum aliquip Lorem in cupidatat id sint ad sit. Cillum ipsum
-                consequat esse Lorem irure labore. Cupidatat nulla eu eu ipsum
-                Lorem labore ex ipsum minim quis Lorem. Aute ea tempor do ut.
-                Culpa tempor nulla id magna labore reprehenderit reprehenderit
-                pariatur reprehenderit pariatur sit ut. BRACO I SINOVI DOO. Mi
-                smo ta Ekipa :)
+                Mi smo tim koji je u želji da iskaže svoju kreativnost 
+                otpočeo sa izradom drvenih dekoracija. Sada iza nas stoji 
+                višegodišnji rad sa velikim brojem uspešno pripremljenih 
+                dekorativnih predmeta, poklona i drugih unikatnih 
+                i ručno izrađenih detalja. Sa nama možete ostvariti sve svoje želje. 
+                Vaši predmeti mogu biti personalizovani, elegantni, upečatljivi, 
+                raskošni, otmeni.... Prepustite se mašti i kontaktirajte nas da zajedno 
+                kreiramo dekoracije za Vas i Vaše namilije.
               </p>
             </div>
 
@@ -163,7 +164,7 @@ const Wrapper = styled.div`
       margin-bottom: 2rem;
     }
     p {
-      font-size: 1rem;
+      font-size: 1.2rem;
       line-height: 2;
       text-shadow: var(--text-shadow);
     }

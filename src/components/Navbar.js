@@ -181,6 +181,7 @@ const Wrapper = styled.nav`
   }
 
   @media (min-width: 800px) {
+    height: 4.2rem;
     background: linear-gradient(
       to bottom,
       rgba(20, 24, 33, 0.6),

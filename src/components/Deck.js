@@ -44,7 +44,6 @@ const Deck = () => {
         setSprings(i=>{
             // We're only interested in changing spring-data for the current spring
             if(index !==i)  {
-                console.log("kurec")
                 return }
 
              //da li je dotaknuta karta, ubacena u niz za izbacaj
@@ -101,12 +100,8 @@ const Wrapper = styled.div`
   
   width: 100%;
   height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  position: fixed;
-  left:0;
-  bottom:4rem;
+  position: relative;
+  
    @media (min-width: 800px) {
        display:none;
    }

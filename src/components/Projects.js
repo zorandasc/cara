@@ -15,8 +15,8 @@ const Projects = ({ offset, factor = 2 }) => {
         offset={1.1}
         factor={factor}
         speed={-0.2}
-        //bg="linear-gradient(to right, #c31432, #240b36)"
-        bg="linear-gradient(to top, #1f4037, #99f2c8)"
+        bg="linear-gradient(to right, #159957, #155799)"
+        //bg="linear-gradient(to top, #1f4037, #99f2c8)"
         clipPath="polygon(0 15%, 100% 25%, 100% 85%, 0 75%)"
       ></Divider>
       <Content speed={0.4} offset={offset + 0.2} factor={factor}>

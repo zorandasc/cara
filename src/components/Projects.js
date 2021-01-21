@@ -24,6 +24,7 @@ const Projects = ({ offset, factor = 2 }) => {
           <h2>PROJEKTI</h2>
         </Inner>
         <Deck></Deck>
+        <Deck></Deck>
         <Slider></Slider>
       </Content>
       <Divider speed={0.1} offset={offset} factor={factor}>

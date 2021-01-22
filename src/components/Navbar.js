@@ -51,7 +51,7 @@ const Navbar = () => {
               href={item.path}
               onClick={e => {
                 e.preventDefault()
-                parall.scrollTo(i + 2)
+                parall.scrollTo(item.poz)
               }}
             >
               {item.text}
@@ -86,7 +86,7 @@ const Navbar = () => {
                     href={item.path}
                     onClick={e => {
                       e.preventDefault()
-                      parall.scrollTo(index + 2)
+                      parall.scrollTo(item.poz)
                     }}
                   >
                     {item.text}

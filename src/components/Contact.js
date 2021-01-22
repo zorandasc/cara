@@ -65,7 +65,13 @@ const Contact = ({ offset, factor = 1 }) => {
       </Divider>
       <Content speed={0.4} offset={offset} factor={factor}>
         <Inner>
-          <h2>KONTAKT</h2>
+          <h2
+            css={css`
+              margin-top: 3rem;
+            `}
+          >
+            KONTAKT
+          </h2>
           <p
             css={css`
               font-size: 1.5rem;
@@ -234,9 +240,13 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
-      -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(0, 0, 0, 0);
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.6),
+      inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+      -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+      0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+      0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.01);
+
     transition: transform 0.5s;
 
     i {
@@ -246,12 +256,9 @@ const Container = styled.div`
       line-height: 0;
     }
     &:hover {
-      box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.6),
-        inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
-        -0.5px -0.5px 0px rgba(255, 255, 255, 1),
-        0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
-        0px 12px 10px -10px rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(0, 0, 0, 0.01);
+      box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(0, 0, 0, 0);
       transform: translateY(2px);
       i {
         transform: scale(0.9);

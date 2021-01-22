@@ -132,14 +132,13 @@ const About = ({ offset, factor = 1 }) => {
             <div className="text">
               <h2>O NAMA</h2>
               <p>
-                Mi smo tim koji je u želji da iskaže svoju kreativnost 
-                otpočeo sa izradom drvenih dekoracija. Sada iza nas stoji 
-                višegodišnji rad sa velikim brojem uspešno pripremljenih 
-                dekorativnih predmeta, poklona i drugih unikatnih 
-                i ručno izrađenih detalja. Sa nama možete ostvariti sve svoje želje. 
-                Vaši predmeti mogu biti personalizovani, elegantni, upečatljivi, 
-                raskošni, otmeni.... Prepustite se mašti i kontaktirajte nas da zajedno 
-                kreiramo dekoracije za Vas i Vaše namilije.
+                Mi smo tim iza kojeg stoji višegodišnji rad sa velikim brojem
+                uspešno pripremljenih dekorativnih predmeta, poklona i drugih
+                unikatnih i ručno izrađenih detalja. Sa nama možete ostvariti
+                sve svoje želje. Vaši predmeti mogu biti personalizovani,
+                elegantni, upečatljivi, raskošni, otmeni.... Prepustite se mašti
+                i kontaktirajte nas da zajedno kreiramo dekoracije za Vas i Vaše
+                namilije.
               </p>
             </div>
 

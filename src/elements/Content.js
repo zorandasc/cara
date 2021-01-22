@@ -8,7 +8,7 @@ const Content = ({ speed, offset, factor = 1, children, className = "" }) => {
     <ParallaxLayer
       css={css`
         padding: 2rem;
-        //border: 1px solid white;
+        border: 1px solid white;
         display: flex;
         flex-direction: column;
         align-items: center;

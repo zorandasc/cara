@@ -158,6 +158,9 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   .text {
+    //da se onama text pomjeri malo gore
+    //pa je -8rem
+    margin-top: -8rem;
     margin-bottom: 3rem;
     h2 {
       margin-bottom: 2rem;
@@ -166,6 +169,11 @@ const Wrapper = styled.div`
       font-size: 1.2rem;
       line-height: 2;
       text-shadow: var(--text-shadow);
+    }
+  }
+  @media (min-width: 800px) {
+    .text {
+      margin-top: 0;
     }
   }
 

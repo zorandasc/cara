@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { useSprings, animated, interpolate, config } from "react-spring"
 import { useGesture } from "react-use-gesture"
 import { GoTriangleLeft, GoTriangleRight } from "react-icons/go"
+import VisibilitySensor from "react-visibility-sensor"
 
 import slides from "../constants/slideData"
 
@@ -10,6 +11,20 @@ const from = i => ({ xTrans: 0, rot: 0, opacity: 0 })
 
 const to = (i, slideIndex) => {
   let index = slides.length + (slideIndex - i)
+  
+  return {
+    xTrans: 0,
+    rot: 0,
+    opacity: index === 0 ? 1 : 0.6,
+    scale: 1,
+    xMouse: 0,
+    yMouse: 0,
+  }
+}
+
+const to1 = (i, slideIndex) => {
+  let index = slides.length + (slideIndex - i)
+  
   return {
     xTrans: index,
     rot: index === 0 ? 0 : index > 0 ? 1 : -1,
@@ -20,6 +35,7 @@ const to = (i, slideIndex) => {
   }
 }
 
+
 const trans = (xTrans, xMouse, yMouse, r, s) =>
   `perspective(800px) translateX(calc(100% * ${xTrans})) rotateX(${xMouse}deg) rotateY(calc(-65deg*${r} + ${yMouse}deg)) scale(${s}) `
 
@@ -27,6 +43,8 @@ const Slider = () => {
   //ne dovodi do rerenderovanja  komponente za razliku od usestate
   const slideIndex = useRef(0)
   let current = slideIndex.current
+
+  
 
   const [springs, setSprings] = useSprings(
     [...slides, ...slides, ...slides].length,
@@ -69,12 +87,18 @@ const Slider = () => {
 
   const handleNext = () => {
     current = (current + 1) % slides.length
-    setSprings(i => ({ ...to(i, current) }))
+    setSprings(i => ({ ...to1(i, current) }))
   }
   const handlePrev = () => {
     current = current === 0 ? slides.length - 1 : current - 1
-    setSprings(i => ({ ...to(i, current) }))
+    setSprings(i => ({ ...to1(i, current) }))
   }
+
+function onChange (isVisible) {
+  isVisible ? setSprings(i => ({ ...to1(i, current) })) : setSprings(i => ({ ...to(i, current)}))
+  //console.log('Element is now %s', isVisible ? 'visible' : 'hidden');
+  }
+
 
   return (
     <Wrapper>
@@ -86,7 +110,8 @@ const Slider = () => {
           let j = i % slides.length
           //j ide od 0 do 4
           return (
-            <animated.div key={i} className="slide">
+             <VisibilitySensor key={i} onChange={onChange}>
+                <animated.div className="slide">
               {/*
                 <animated.div
                   className="slideBackground"
@@ -130,7 +155,7 @@ const Slider = () => {
                 </animated.div>
               </animated.div>
             </animated.div>
-          )
+             </VisibilitySensor>)
         })}
         <button className="prev" onClick={handlePrev}>
           <i>
@@ -143,7 +168,7 @@ const Slider = () => {
           </i>
         </button>
       </div>
-      <div className="drugiSektor"></div>
+    
     </Wrapper>
   )
 }

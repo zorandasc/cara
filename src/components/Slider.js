@@ -11,7 +11,7 @@ const from = i => ({ xTrans: 0, rot: 0, opacity: 0 })
 
 const to = (i, slideIndex) => {
   let index = slides.length + (slideIndex - i)
-  
+
   return {
     xTrans: 0,
     rot: 0,
@@ -24,7 +24,7 @@ const to = (i, slideIndex) => {
 
 const to1 = (i, slideIndex) => {
   let index = slides.length + (slideIndex - i)
-  
+
   return {
     xTrans: index,
     rot: index === 0 ? 0 : index > 0 ? 1 : -1,
@@ -35,7 +35,6 @@ const to1 = (i, slideIndex) => {
   }
 }
 
-
 const trans = (xTrans, xMouse, yMouse, r, s) =>
   `perspective(800px) translateX(calc(100% * ${xTrans})) rotateX(${xMouse}deg) rotateY(calc(-65deg*${r} + ${yMouse}deg)) scale(${s}) `
 
@@ -43,8 +42,6 @@ const Slider = () => {
   //ne dovodi do rerenderovanja  komponente za razliku od usestate
   const slideIndex = useRef(0)
   let current = slideIndex.current
-
-  
 
   const [springs, setSprings] = useSprings(
     [...slides, ...slides, ...slides].length,
@@ -94,11 +91,12 @@ const Slider = () => {
     setSprings(i => ({ ...to1(i, current) }))
   }
 
-function onChange (isVisible) {
-  isVisible ? setSprings(i => ({ ...to1(i, current) })) : setSprings(i => ({ ...to(i, current)}))
-  //console.log('Element is now %s', isVisible ? 'visible' : 'hidden');
+  function onChange(isVisible) {
+    isVisible
+      ? setSprings(i => ({ ...to1(i, current) }))
+      : setSprings(i => ({ ...to(i, current) }))
+    //console.log('Element is now %s', isVisible ? 'visible' : 'hidden');
   }
-
 
   return (
     <Wrapper>
@@ -110,9 +108,9 @@ function onChange (isVisible) {
           let j = i % slides.length
           //j ide od 0 do 4
           return (
-             <VisibilitySensor key={i} onChange={onChange}>
-                <animated.div className="slide">
-              {/*
+            <VisibilitySensor key={i} onChange={onChange}>
+              <animated.div className="slide">
+                {/*
                 <animated.div
                   className="slideBackground"
                   style={{
@@ -125,37 +123,38 @@ function onChange (isVisible) {
                   }}
                 ></animated.div>
                     */}
-              <animated.div
-                {...bind(i)}
-                className="slideContent"
-                style={{
-                  backgroundImage: `url(${slides[j].image})`,
-                  transform: interpolate(
-                    [xTrans, xMouse, yMouse, rot, scale],
-                    trans
-                  ),
-                  //opacity,
-                }}
-              >
                 <animated.div
-                  className="slideContentInner"
+                  {...bind(i)}
+                  className="slideContent"
                   style={{
-                    opacity: opacity.interpolate({
-                      range: [0.6, 1],
-                      output: [0, 1],
-                    }),
-                    transform: rot.interpolate(
-                      t => `translate3d(0,calc(80% *(-1)* ${t}), 4rem)`
+                    backgroundImage: `url(${slides[j].image})`,
+                    transform: interpolate(
+                      [xTrans, xMouse, yMouse, rot, scale],
+                      trans
                     ),
+                    //opacity,
                   }}
                 >
-                  <h2 className="slideTitle">{slides[j].title}</h2>
-                  <h3 className="slideSubtitle">{slides[j].subtitle}</h3>
-                  <p className="slideDescription">{slides[j].description}</p>
+                  <animated.div
+                    className="slideContentInner"
+                    style={{
+                      opacity: opacity.interpolate({
+                        range: [0.6, 1],
+                        output: [0, 1],
+                      }),
+                      transform: rot.interpolate(
+                        t => `translate3d(0,calc(80% *(-1)* ${t}), 4rem)`
+                      ),
+                    }}
+                  >
+                    <h2 className="slideTitle">{slides[j].title}</h2>
+                    <h3 className="slideSubtitle">{slides[j].subtitle}</h3>
+                    <p className="slideDescription">{slides[j].description}</p>
+                  </animated.div>
                 </animated.div>
               </animated.div>
-            </animated.div>
-             </VisibilitySensor>)
+            </VisibilitySensor>
+          )
         })}
         <button className="prev" onClick={handlePrev}>
           <i>
@@ -168,7 +167,6 @@ function onChange (isVisible) {
           </i>
         </button>
       </div>
-    
     </Wrapper>
   )
 }
@@ -196,8 +194,8 @@ const Wrapper = styled.div`
     //border:2px solid red;
     width: 30vw;
     max-width: 300px;
-    height: 50vw;
-    max-height: 500px;
+    height: 40vw;
+    max-height: 430px;
     background-color: rgba(0, 0, 0, 0.3);
     background-blend-mode: multiply;
     background-size: cover;
@@ -207,6 +205,9 @@ const Wrapper = styled.div`
     display: grid;
     align-items: center;
     border-radius: 8px;
+    @media (min-width: 1600px) {
+      max-height: 500px;
+    }
   }
   /*
   .slideBackground {
